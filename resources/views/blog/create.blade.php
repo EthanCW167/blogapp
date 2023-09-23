@@ -20,6 +20,7 @@
         action="{{ route('blog.store') }}"
         method="POST"
         enctype="multipart/form-data">
+        @csrf
         <input
             type="text"
             name="title"
