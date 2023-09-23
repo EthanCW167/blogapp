@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::prefix('/blog')->group(function () {
     //GET
     Route::get('/', [PostsController::class, 'index'])->name('blog.index');
-    Route::get('/{id}', [PostsController::class, 'show'])->name('blog.show');
+    Route::get('/{id}', [PostsController::class, 'show'])->name('blog.show')->whereNumber('id');
 
     //POST
     Route::get('/create', [PostsController::class, 'create'])->name('blog.create');
