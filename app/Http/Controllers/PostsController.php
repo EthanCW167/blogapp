@@ -42,7 +42,22 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $request->validate([
+            'title' => 'required|unique:posts|max:255',
+            'excerpt' => 'required',
+            'body' => 'required',
+            'image' => ['required', 'mimes:jpg,png,jpeg', 'max:5048'],
+        ]);
+
+        Post::create([
+            'title' => $request->title,
+            'excerpt' => $request->excerpt,
+            'body' => $request->body,
+            'image_path' => $this->storeImage($request),
+        ]);
+
+        return redirect(route('blog.index'));
     }
 
     /**
@@ -77,5 +92,12 @@ class PostsController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    private function storeImage($request)
+    {
+        $newImageName =  uniqid() . '-' . $request->title . '.' . $request->image->extension();
+
+        return $request->image->move(public_path('images', $newImageName));
     }
 }
