@@ -12,6 +12,18 @@
                     {{ __("You're logged in!") }}
                 </div>
             </div>
+
+            <div>
+                <h1 class="text-xl text-white font-bold pt-8 pb-2">
+                    Posts of: {{ Auth::user()->name }}
+                </h1>
+
+                @foreach (Auth::user()->posts as $post)
+                    <h2 class="text-white">
+                        {{ $post->title }}
+                    </h2>
+                @endforeach
+            </div>
         </div>
     </div>
 </x-app-layout>

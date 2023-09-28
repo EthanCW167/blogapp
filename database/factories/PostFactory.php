@@ -20,7 +20,8 @@ class PostFactory extends Factory
             'title' => $this->faker->unique()->sentence(),
             'excerpt' => $this->faker->realText($maxNbChars = 50),
             'body' => $this->faker->text(),
-            'image_path' => $this->faker->imageUrl(640, 480)
+            'image_path' => $this->faker->imageUrl(640, 480),
+            'user_id' => 1
         ];
     }
 }
