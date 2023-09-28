@@ -85,7 +85,11 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        POST::where('id', $id)->update($request->except([
+            '_token', '_method'
+        ]));
+
+        return redirect(route('blog.index'));
     }
 
     /**

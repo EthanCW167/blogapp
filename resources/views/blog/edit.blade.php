@@ -10,7 +10,7 @@
 <div class="w-4/5 mx-auto">
     <div class="text-center pt-20">
         <h1 class="text-3xl text-gray-700">
-            Add new post
+             Edit: {{ $post->title }}
         </h1>
         <hr class="border border-1 border-gray-300 mt-10">
     </div>
@@ -31,26 +31,27 @@
         @endif
     </div>
     <form
-        action="{{ route('blog.store') }}"
+        action="{{ route('blog.update', $post->id) }}"
         method="POST"
         enctype="multipart/form-data">
         @csrf
+        @method('PATCH')
         <input
             type="text"
             name="title"
-            placeholder="Title..."
+            value="{{ $post->title }}"
             class="bg-transparent block border-b-2 w-full h-20 text-2xl outline-none">
 
         <input
             type="text"
             name="excerpt"
-            placeholder="Excerpt..."
+            value="{{ $post->excerpt }}"
             class="bg-transparent block border-b-2 w-full h-20 text-2xl outline-none">
 
         <textarea
             name="body"
             placeholder="Body..."
-            class="py-20 bg-transparent block border-b-2 w-full h-60 text-xl outline-none"></textarea>
+            class="py-20 bg-transparent block border-b-2 w-full h-60 text-xl outline-none">{{ $post->body }}"</textarea>
             
         <div class="bg-grey-lighter py-10">
             <label class="w-44 flex flex-col items-center px-2 py-3 bg-white-rounded-lg shadow-lg tracking-wide uppercase border border-blue cursor-pointer">
@@ -59,7 +60,7 @@
                     </span>
                 <input
                     type="file"
-                    name="image"
+                    name="image_path"
                     class="hidden">
             </label>
         </div>
@@ -67,7 +68,7 @@
         <button
             type="submit"
             class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
-            Submit Post
+            Update Post
         </button>
     </form>
 </div>
