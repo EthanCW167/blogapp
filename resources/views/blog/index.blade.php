@@ -53,6 +53,11 @@
                         </a>
                     on 23/09/2023
                 </span>
+                <div>
+                <a href="{{ route('blog.edit', $post->id) }}" class="bloack italic text-green-500 border-b-1 border-green-400">
+                    Edit
+                </a>
+            </div>
             </div>
         </div>
     </div>
