@@ -34,9 +34,9 @@
                     <a
                         href=""
                         class="font-bold text-green-500 italic hover:text-green-400 hover:border-b-2 border-green-400 pb-3 transition-all py-20">
-                        Ethan
+                        {{ $post->user->name }}
                     </a>
-                    On 23/09/2023
+                    On {{ $post->updated_at->format('d/m/Y') }}
                 </span>
             </div>
         </div>
