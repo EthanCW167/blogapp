@@ -16,7 +16,7 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = Post::orderBy('id', 'desc')->get();
+        $posts = Post::orderBy('id', 'desc')->paginate(20);
 
         //dd($posts);
 ;
