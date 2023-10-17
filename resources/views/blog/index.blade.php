@@ -15,10 +15,32 @@
     @vite('resources/css/app.css')
 </head>
 <body class="w-full h-full bg-gray-100">
+
+    <nav class="bg-yellow">
+        <div>
+            <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div class="flex flex-shrink-0 items-center">
+                  <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company">
+                </div>
+                <div class="hidden sm:ml-6 sm:block">
+                  <div class="flex space-x-4">
+                    <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                    <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
+                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
+                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
+                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+    </nav>
+    
+    
     <div class="w-4/5 mx-auto pb-10">
         <div class="text-center pt-20">
             <h1 class="text-3xl text-gray-700">
-                All Articles
+                All Articles 22
             </h1>
             <hr class="border border-1 border-gray-300 mt-10">
         </div>
