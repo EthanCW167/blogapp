@@ -10,22 +10,22 @@
     <title>Document</title>
     @vite('resources/css/app.css')
 </head>
-<body class="bg-yellow"> 
+<body class="bg-gradient-to-r from-yellow to-orange font-nunito"> 
 
 <div>
   <div>
     <div>
-      <nav>
+      <nav class="justify-center">
         <div class="flex p-4 justify-between">
           <div>
             <h1 class="font-bold ">
-              <a href="/" class="text-4xl">Navigate</a>
+              <a href="/blogapp/public/" class="text-4xl ">EW</a>
             </h1>
           </div>
           <div>
-            <ul class="flex justify-evenly">
+            <ul class="flex justify-evenly font-bold">
               <li class="px-4">
-                <a href="{{ route('blog.index') }}" class="flex">
+                <a href="{{ route('blog.index') }}" class="flex hover:text-gray">
                   <svg class="w-6" fill="#000000"  version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 512 512" xml:space="preserve">
 <g>
@@ -84,9 +84,18 @@
                 </a>
               </li>
               <li class="pl-20 pr-4">
-                <a href="{{ route('login') }}" class="hover:text-gray">
-                    <span class="font-bold">Login</span>
+                @if (Auth::user())
+                <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="hover:text-white hover:bg-black rounded-full py-2 px-3 text-md font-bold cursor-pointer tracking-wider border-black border-2 transition ease-out">Logout</a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  @csrf
+                </form>
+
+                @else
+                <a href="{{ route('login') }}" class="hover:text-white hover:bg-black rounded-full py-2 px-3 text-md font-bold cursor-pointer tracking-wider border-black border-2 transition ease-out">
+                  <span class="font-bold">Login</span>
                 </a>
+                @endif
               </li>
             </ul>
           </div>
@@ -97,14 +106,21 @@
     <main class="px-16 py-6">
       
 
-      <header class="font-bold text-6xl">
-          <h1>Ethan Wilson</h1>
+      <header class=" pl-20 pt-20 pb-20 font-bold text-9xl flex justify-evenly">
+        <div>
+          <h1>Ethan</h1>
+          <h1 class="pl-36">Wilson</h1>
+        </div>
+        <div>
+          <img src="{{ asset('images/IMG_5614.JPG') }}" class="w-96 h-96 rounded-full object-cover" alt="Rounded avatar"><img>
+        <div>
       </header>
+    
 
-
-      <div class="">
-        <h4 class="font-bold mt-12 pb-2">Links</h4>
-
+      <div class="text-center">
+        <div class="pt-6 font-bold text-xl">Hi, welcome to my website!</div>
+        <div class="font-bold text-xl">This serves as a hub for all you need to know about me.</div>
+      </div>
         <div class="mt-8 grid lg:grid-cols-3 gap-10">
 
           <a href="{{ route('blog.index') }}">
@@ -112,7 +128,7 @@
             <img src="{{ asset('images/BlogImage.jpg') }}" class="w-full h-48 sm:h-48 object-cover">
             <div class="m-4">
               <span class="font-bold text-xl">Blog</span>
-              <span>Description</span>
+              <div class="pt-1">If there's anything interesting that I want to talk about this is the place you'll find it.</div>
             </div>
           </div>
           </a>
@@ -122,7 +138,7 @@
             <img src="{{ asset('images/linkedinImage.png') }}" class="w-full h-full sm:h-48 object-scale-down">
             <div class="m-4">
               <span class="font-bold text-xl">LinkedIn</span>
-              <span>Description</span>
+              <div class="pt-1">Find out more about me, my profile will tell you about my education, skills and experience.</div>
             </div>
           </div>
         </a>
@@ -131,14 +147,14 @@
           <div class="card h-full hover:shadow-xl">
             <img src="{{ asset('images/GitHub-logo.jpg') }}" class="w-full h-32 sm:h-48 object-scale-down">
             <div class="m-4">
-              <span class="font-bold text-xl">Portfolio</span>
-              <span>Description</span>
+              <span class="font-bold text-xl ">Portfolio</span>
+              <div class="pt-1">Discover what i've coded, my portfolio includes both my academic and personal projects.</div>
             </div>
           </div>
         </div>
       </a>
 
-      </div>
+      
 
     </main>
   </div>

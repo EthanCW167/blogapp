@@ -26,11 +26,14 @@ export default {
           'gray-dark': '#273444',
           'gray': '#8492a6',
           'gray-light': '#d3dce6',
-          'white': '#ffffff'
+          'white': '#ffffff',
+          'black': '#000000',
+          'red': '#FF0000',
         },
         fontFamily: {
           sans: ['Graphik', 'sans-serif'],
           serif: ['Merriweather', 'serif'],
+          nunito: ['Nunito']
         },
         extend: {
           spacing: {
