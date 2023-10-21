@@ -125,7 +125,7 @@
 
           <a href="{{ route('blog.index') }}">
           <div class="card h-full hover:shadow-xl">
-            <img src="{{ asset('images/BlogImage.jpg') }}" class="w-full h-48 sm:h-48 object-cover">
+            <img src="{{ asset('images/BlogImage.jpg') }}" class="w-full h-full sm:h-48 object-cover">
             <div class="m-4">
               <span class="font-bold text-xl">Blog</span>
               <div class="pt-1">If there's anything interesting that I want to talk about this is the place you'll find it.</div>
@@ -141,7 +141,7 @@
               <div class="pt-1">Find out more about me, my profile will tell you about my education, skills and experience.</div>
             </div>
           </div>
-        </a>
+          </a>
 
           <a href="https://github.com/EthanCW167">
           <div class="card h-full hover:shadow-xl">
@@ -151,8 +151,9 @@
               <div class="pt-1">Discover what i've coded, my portfolio includes both my academic and personal projects.</div>
             </div>
           </div>
+        </a>
         </div>
-      </a>
+        
 
       
 
